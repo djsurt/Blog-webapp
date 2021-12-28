@@ -1,0 +1,13 @@
+<%- include('partials/header.ejs') %>
+<h1>Home</h1>
+<%= homeContent %>
+<br>
+<button type="button" class="btn btn-outline-light" name="button">
+  <a href="/compose" id="compose"> Compose </a>
+</button>
+<% allPosts.forEach((post) =>{ %>
+  <h1><%= post.title %></h1>
+  <% let li = "/posts/" + post.title; %>
+  <p><%= post.body.substring(0, 100) + "..." %><a href= <%= li%>>Read more</a></p>
+<%});%>
+<%- include('partials/footer.ejs') %>
